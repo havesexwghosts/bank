@@ -1,0 +1,5 @@
+NULL    -> None
+INTEGER -> int
+REAL    -> float
+TEXT    -> str
+BLOB    -> bytes

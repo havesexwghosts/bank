@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <title>Account Balance - Watanabe Banking</title>
+
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 0;
+            }
+
+            .container {
+                width: 80%;
+                margin: 0 auto;
+                padding: 20px;
+            }
+
+            h1 {
+                text-align: center;
+                color: #4CAF50;
+                margin-top: 50px;
+            }
+
+            .balance-container {
+                background-color: #fff;
+                padding: 30px;
+                border-radius: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                width: 50%;
+                margin: 30px auto;
+                text-align: center;
+            }
+
+            .balance-container p {
+                font-size: 18px;
+                margin: 15px 0;
+            }
+
+            .balance-container .balance {
+                font-size: 24px;
+                font-weight: bold;
+                color: #4CAF50;
+            }
+
+            .action-buttons {
+                display: flex;
+                justify-content: space-around;
+                margin-top: 20px;
+            }
+
+            .action-buttons button {
+                width: 30%;
+                padding: 10px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+
+            .action-buttons button:hover {
+                background-color: #45a049;
+            }
+
+            /* Responsive styling for smaller screens */
+            @media (max-width: 768px) {
+                .balance-container {
+                    width: 90%;
+                }
+
+                .action-buttons button {
+                    width: 45%;
+                }
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Your Account Balance</h1>
+
+            <div class="balance-container">
+                <!-- Show the balance here, dynamically inserted by Flask -->
+                <p>Welcome, {{ name }}!</p>
+                <p>Your Current Balance:</p>
+                <p class="balance">${{ balance }}</p>
+
+                <div class="action-buttons">
+                    <!-- Links or buttons to Deposit, Withdraw, or Log Out -->
+                    <button onclick="window.location.href='/transfer?name={{ name }}&balance={{ balance }}'">Transfer</button>
+                    <button onclick="window.location.href='/logout'">Log Out</button>
+                </div>
+            
+            </div>
+        
+        </div>
+    
+    </body>
+
+</html>
